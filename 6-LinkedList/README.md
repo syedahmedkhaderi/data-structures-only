@@ -1,117 +1,82 @@
 # Linked List Implementations in Python
 
-My first comprehensive learning project demonstrating different types of **linked lists** using Python — featuring various implementations:
+My first comprehensive learning project demonstrating all types of **linked lists** using Python — featuring various implementations:
 
-- Singly Linked List  
-- Doubly Linked List  
-- Circular Linked List  
-- Reversal Operation (Singly)  
+- Singly Linked List
+- Doubly Linked List
+- Circular Linked List (Singly & Doubly)
+- Reversal Operation (Singly)
 - Dictionary-Based Linked List (non-classic, more intuitive)
 
 ## What’s Inside
 
-| Data Structure        | Features                                      |
-|-----------------------|-----------------------------------------------|
-| Singly Linked List    | Append, Prepend, Insert, Delete, Reverse      |
-| Doubly Linked List    | Bidirectional traversal, Append, Delete       |
-| Circular Linked List  | Last node points to head                      |
-| Dictionary-Based List | Simplified syntax using dicts and key access  |
+| Data Structure                | Features                                                    |
+|-------------------------------|-------------------------------------------------------------|
+| Singly Linked List            | Append, Prepend, Insert, Delete, Reverse, Get, Update       |
+| Doubly Linked List            | Bidirectional traversal, Append, Prepend, Insert, Delete, Search, Get, Set |
+| Circular Linked List (Singly) | Last node points to head, Append, Prepend, Insert, Remove, Search, Update |
+| Circular Doubly Linked List   | Circular with prev/next pointers, Insert, Delete, Traversal (forward/reverse) |
+| Dictionary-Based List         | Simplified syntax using dicts and key access                |
 
 ## Folder Structure
 
 ```
-linkedlist-python/
-├── singly_linked_list.py
-├── doubly_linked_list.py
-├── circular_linked_list.py
+6-LinkedList/
+├── 1-Singly LL/
+│   └── singly_linked_list.py
+├── 2-Doubly LL/
+│   └── doubly_linked_list.py
+├── 3-Circular LL/
+│   ├── circular_linked_list.py
+│   └── CircularDoublyLinkedList.py
 ├── dict_linked_list.py
-├── README.md
+├── Reverse_SLL.py
+└── README.md
 ```
-
-## Singly Linked List
-
-A basic implementation using `Node` and `LinkedList` classes.
-
-Implements:
-
-- `append()`
-- `prepend()`
-- `insert()`
-- `delete()`
-- `reverse()`
-- `printl()`
-
-### Reverse Method
-
-Reverses the linked list **in-place** (without using extra space):
-
-```python
-def reverse(self):
-    prev, curr = None, self.head
-    self.tail = self.head
-    while curr:
-        nxt = curr.next
-        curr.next = prev
-        prev = curr
-        curr = nxt
-    self.head = prev
-```
-
-## Doubly Linked List
-
-Supports forward and backward traversal.
-
-- Maintains both `next` and `prev` pointers for each node
-- Efficient traversal from both ends
-
-## Circular Linked List
-
-A type of linked list where the last node points back to the `head`.
-
-- Useful for round-robin scheduling
-- Optionally both singly and doubly circular variations
 
 ## Dictionary-Based Linked List
 
-A more Pythonic and beginner-friendly variation.
+**Location:** `dict_linked_list.py`
 
-```python
-node1 = {'value': 10, 'next': None}
-node2 = {'value': 20, 'next': None}
+A more Pythonic and beginner-friendly variation using dictionaries instead of Node objects.
 
-node1['next'] = node2
-```
+### Methods Implemented:
 
-- No object-oriented classes or methods required
+- `__init__(value)` - Initialize with a head node
+- `append(data)` - Add element to the end
+- `prepend(data)` - Add element to the beginning
+- `insert(index, value)` - Insert value at specific index
+- `delete(index)` - Delete node at given index
+- `get_index(index)` - Return the node (dictionary) at given index
+- `print_list()` - Return list of all values in order
+- `help()` - Display help message with all methods
+
+### Key Features:
+
+- No object-oriented Node class required
 - All nodes are simple Python dictionaries
-- Easier to debug and visualize
-
-Great for beginners  
-No need for custom Node class
+- Easier to debug and visualize for beginners
+- Uses dictionary access methods instead of dot notation
+- Great for learning linked list concepts without OOP complexity
 
 
 ## Concepts Covered
 
-- Singly/Double/Circular linked lists
-- Object-oriented vs dictionary-based data structures
-- Pointer manipulation and reversal logic
-- Edge case handling and dynamic memory modeling
+- **Singly Linked Lists** - Basic linked list with forward-only traversal
+- **Doubly Linked Lists** - Bidirectional traversal with prev/next pointers
+- **Circular Linked Lists** - Both singly and doubly circular variations
+- **Object-Oriented vs Dictionary-Based** - Different implementation approaches
+- **Pointer Manipulation** - Understanding and managing node references
+- **Reversal Logic** - In-place list reversal algorithms
+- **Edge Case Handling** - Empty lists, single nodes, boundary conditions
+- **Dynamic Memory Modeling** - Understanding how nodes are scattered in memory
 
 
 ## Requirements
 
-- Python 3.7+  
-- No external libraries required  
+- Python 3.7+
+- No external libraries required
 - Runs directly on the CLI or any Python interpreter
-
-## ▶ How to Run
-
-```bash
-python3 SLL_Notes.py.py
-python3 doubly_linked_list.py
-python3 circular_linked_list.py
-python3 dict_linked_list.py
-```
 
 ## 📝 License
 

@@ -2,7 +2,34 @@
 #For this we would have to implement a linked list from scratch first, so we will import our Implementation.py file
 #And use the LinkedList and Node classes defined there so that we don't have to create a Linked List from scratch
 
-from SLL_Notes import LinkedList, Node
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
+    
+    def append(self, value):
+        new_node = Node(value)
+        if self.head is None:
+            self.head = new_node
+            self.tail = self.head
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
+        self.length += 1
+    
+    def print_list(self):
+        arr = []
+        temp = self.head
+        while temp is not None:
+            arr.append(temp.value)
+            temp = temp.next
+        print(arr)
 
 #Now we create a Linked List by appending some values
 my_linked_list = LinkedList()
@@ -30,6 +57,7 @@ my_linked_list.print_list()
 #Finally, we will update the 'next' of the head(which is still the original head) point to None as it is effectively the last node
 #And then we will update the head to be equal to 'first', which by now points to the last node of the original list, and return the now reversed linked list
 #Time complexity pretty clearly will be O(n)
+'''
 def reverse(linked_list):
     if linked_list.length <=1:
         return linked_list
@@ -49,8 +77,8 @@ def reverse(linked_list):
 reversed_linked_list = reverse(my_linked_list)
 reversed_linked_list.print_list()
 #6 5 4 3 2
+'''
 
-''' My Easier Method
 def reverse(self):
     prev, curr = None, self.head
     self.tail = self.head
@@ -60,4 +88,3 @@ def reverse(self):
         prev = curr
         curr = nxt
     self.head = prev
-'''
