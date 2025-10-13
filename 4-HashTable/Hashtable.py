@@ -48,6 +48,14 @@ class Hashtable:
                 return None
         return None
 
+    def contains(self, key):
+        hash_value = self.hash(key)
+        reference = self.hashmap[hash_value]
+        for i in range(len(reference)):
+            if reference[i][0] == key:
+                return True
+        return False
+
 # You are returning None for add and delete because they don't return anything and just add or delete the value.
 # So you are making it clear that they are returning nothing
 

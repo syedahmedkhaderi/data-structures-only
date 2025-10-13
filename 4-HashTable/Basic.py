@@ -16,7 +16,15 @@ class Hashtable:
 
     def find(self, value):
         index = hash_me(value)
-        print(f"Found at position {index} : {value} in Hashtable") if self.bucket[index][0] == value else print("Value not found")
+        bucket_list = self.bucket[index]
+        if not bucket_list:
+            print("Value not found")
+            return
+        for item in bucket_list:
+            if item == value:
+                print(f"Found at position {index} : {value} in Hashtable")
+                return
+        print("Value not found")
 
 
 ht = Hashtable()

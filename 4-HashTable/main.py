@@ -54,6 +54,17 @@ class Hashtable:
                 return None
         return None
 
+    def contains(self, key):
+        """
+        Returns True if the key exists in the map, else False
+        """
+        hash_value = self.hash(key)
+        reference = self.hashmap[hash_value]
+        for i in range(len(reference)):
+            if reference[i][0] == key:
+                return True
+        return False
+
 
 h = Hashtable()
 h.put('grapes', 1000)
