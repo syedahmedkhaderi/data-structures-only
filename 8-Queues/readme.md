@@ -71,16 +71,6 @@
 
 ---
 
-## Queue Comparison
-
-| Implementation         | Enqueue | Dequeue | Peek   | Space Complexity | Notes                        |
-|------------------------|---------|---------|--------|------------------|------------------------------|
-| No Size (Array)        | O(1)*   | O(n)*   | O(1)   | O(n)             | Dequeue may require shifting |
-| With Capacity (Array)  | O(1)    | O(1)    | O(1)   | O(k)             | Uses circular buffer         |
-| Linked List            | O(1)    | O(1)    | O(1)   | O(1)             | Dynamic size, no shifting    |
-
-\* If implemented naively, array-based dequeue is O(n) due to shifting. With circular buffer, it's O(1).
-
 ### Which is better?
 
 - **With Capacity (Circular):** Best for fixed-size, high-performance needs (O(1) for all ops, minimal overhead).
