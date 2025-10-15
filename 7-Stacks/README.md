@@ -22,6 +22,17 @@ A focused collection of **stack data structures** implemented in Python — show
 ├── stacks_Array_implementation.py
 └── stacks_LL_implementation.py
 ```
+## Time and Space Complexity Comparison
+
+| Implementation                | Push | Pop | Peek | isEmpty | Size | Space Complexity | Notes                                  |
+|-------------------------------|------|-----|------|---------|------|------------------|----------------------------------------|
+| Array-Based Stack             | O(1) | O(1)| O(1) | O(1)    | O(1) | O(n)             | Backed by Python list (dynamic array)  |
+| Linked List Stack             | O(1) | O(1)| O(1) | O(1)    | O(1) | O(n)             | Each node uses extra pointer storage   |
+| MultiStack (Three-in-One)     | O(1) | O(1)| O(1) | O(1)    | O(1) | O(3k)            | Fixed-size, k = stack capacity/stack   |
+
+- **Array-Based Stack**: Fast and memory-efficient for most use-cases; resizing handled by Python.
+- **Linked List Stack**: Slightly more memory per element (node pointers), but no resizing overhead.
+- **MultiStack**: All operations are O(1), but total size is fixed at creation (cannot grow beyond initial allocation).
 
 ## MultiStack Highlight
 Implements three independent stacks inside a single array by dividing storage into equal segments. Each stack maintains its own size counter and index calculations to support `Push`, `Pop`, `Peek`, `IsEmpty`, and `IsFull` operations while sharing memory efficiently.
