@@ -51,3 +51,16 @@ Implements three independent stacks inside a single array by dividing storage in
 
 ## 📝 License
 This project is licensed under the **MIT License** — free to use, modify, and share.
+
+## Stack Logic: LIFO Principle
+
+A **stack** is a collection that follows the **Last-In, First-Out (LIFO)** principle. This means:
+- The last element added (pushed) to the stack is the first one to be removed (popped).
+- Think of a stack like a pile of plates: you add and remove plates from the top only.
+
+**Key Operations:**
+- `push(item)`: Add an item to the top of the stack.
+- `pop()`: Remove and return the top item.
+- `peek()`: View the top item without removing it.
+
+All stack implementations in this folder (array-based, linked list, and MultiStack) strictly follow the LIFO logic for all operations.
