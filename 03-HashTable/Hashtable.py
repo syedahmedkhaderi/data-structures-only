@@ -12,6 +12,7 @@ class Hashtable:
 
     def hash(self, key):
         return len(key) % self.buckets
+        # the modulus funcion wraps the values so the hash is always between 0 to buckets-1.
         # The above line is just one of the many ways of hashing.
 
     def add(self, key, value):
