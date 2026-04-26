@@ -68,6 +68,9 @@ class LinkedList:
             temp = temp.next
             i += 1
 
+        # Temp --> New Node --> Temp.Next
+        # This temp is at index - 1
+        
         new_node.next = temp.next
         temp.next = new_node
         self.length += 1
@@ -100,7 +103,7 @@ class LinkedList:
             i += 1
         temp.next = temp.next.next
         if index == self.length - 1:
-            self.tail = temp  # ✅ Update tail if last node was deleted
+            self.tail = temp  # Update tail if last node was deleted
         self.length -= 1
         '''
 

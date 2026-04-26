@@ -78,7 +78,7 @@ A more Pythonic and beginner-friendly variation using dictionaries instead of No
 - No external libraries required
 - Runs directly on the CLI or any Python interpreter
 
-## 📝 License
+## License
 
 This project is licensed under the **MIT License** — free to use, modify, and share.
 

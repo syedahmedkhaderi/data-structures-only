@@ -79,8 +79,8 @@ class LinkedList:
         return self.print_list()
 
     def help(self):
-        print("\n📘 Available Methods in My Dictionary-Based Linked List")
-        print("----------------------------------------------------")
+        print("\nAvailable Methods in My Dictionary-Based Linked List")
+        print("")
         print("append(data)       --> Add element to the end of the list")
         print("prepend(data)      --> Add element to the beginning of the list")
         print("insert(index, val) --> Insert value at specific index; if index >= length, append to end")
@@ -88,7 +88,7 @@ class LinkedList:
         print("get_index(index)   --> Return the node (dictionary) at the given index")
         print("print_list()       --> Return list of all values in order")
         print("help()             --> Display this help message")
-        print("----------------------------------------------------\n")
+        print("\n")
 
 
 ll = LinkedList(29)
