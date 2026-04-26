@@ -145,7 +145,7 @@ class DoublyLinkedList:
             i += 1
         temp.next = temp.next.next
         if index == self.length - 1:
-            self.tail = temp  # ✅ Update tail if last node was deleted
+            self.tail = temp  # Update tail if last node was deleted
         self.length -= 1
         '''
 
